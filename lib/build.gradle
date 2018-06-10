@@ -1,0 +1,43 @@
+apply plugin: 'java'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+
+task clearJar(type: org.gradle.api.tasks.Delete){
+    delete 'build/libs/jsonlib.jar'
+}
+
+task copyClass(type: Copy){
+    mkdir('build/outputs/class/')
+    from('build/classes/main/')
+    exclude('com/example/MyClass.class')
+    exclude('com/example/algorithm')
+    exclude('com/example/annotation/runtime')
+    exclude('com/example/basic')
+    exclude('com/example/reflect')
+    exclude('com/example/sort')
+    exclude('com/example/test1')
+    exclude('com/example/test2')
+    exclude('com/example/thread')
+    exclude('com/example/type')
+    into('build/outputs/class/')
+}
+
+// copy resources
+task copyResources(type: org.gradle.api.tasks.Copy){
+    from('build/resources/main/')
+    into('build/outputs/class/')
+}
+
+task makeJsonJar(type:Jar){
+    // 指定生成的jar名
+    baseName 'jsonlib'
+    // 从哪里加载class文件
+    from('build/outputs/class/')
+    into('/')
+}
+makeJsonJar.dependsOn(clearJar,build,copyClass,copyResources)

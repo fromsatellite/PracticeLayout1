@@ -7,7 +7,7 @@
 
 1、这不是一个独立使用的项目，它是 [HenCoder Android 开发进阶：UI 2-1 修改已有 View 的尺寸](http://hencoder.com/ui-2-1) 的配套练习项目。
 
-2、还包括一些别的练习项目,包括Java Library。
+2、还包括一些别的练习项目,包括《Android开发艺术探索》书中的demo练习、Java Library中关于泛型、反射、注解的练习等。
 
 ### 怎么用？
 

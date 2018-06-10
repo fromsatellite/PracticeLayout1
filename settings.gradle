@@ -1,0 +1,1 @@
+include ':app', ':lib', ':interfaces_libs', ':annotationlib'
