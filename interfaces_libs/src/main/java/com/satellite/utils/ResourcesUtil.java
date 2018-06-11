@@ -27,43 +27,14 @@ import java.lang.reflect.Method;
 /**
  * Created by leador_yang on 2018/6/9.
  */
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-//package com.amap.api.mapcore.util;
-//        import android.app.Activity;
-//        import android.content.Context;
-//        import android.content.res.AssetManager;
-//        import android.content.res.Configuration;
-//        import android.content.res.Resources;
-//        import android.content.res.XmlResourceParser;
-//        import android.os.Environment;
-//        import android.util.DisplayMetrics;
-//        import android.view.LayoutInflater;
-//        import android.view.View;
-//        import android.view.ViewGroup;
-//        import com.amap.api.mapcore.util.fo;
-//        import com.amap.api.mapcore.util.gr;
-//        import java.io.File;
-//        import java.io.FileOutputStream;
-//        import java.io.FilenameFilter;
-//        import java.io.IOException;
-//        import java.io.InputStream;
-//        import java.io.OutputStream;
-//        import java.lang.reflect.Constructor;
-//        import java.lang.reflect.Field;
-//        import java.lang.reflect.Method;
-
 public class ResourcesUtil {
-    //}
-//public class fp {
+
     private static AssetManager b = null;
     private static Resources c = null;
     private static Resources d = null;
     private static boolean e = true;
     private static Context f;
-    private static String g = "amap_resource";
+    private static String g = "lib_resource";
     private static String h = "1_0_0";
     private static String i = ".png";
     private static String j = ".jar";
