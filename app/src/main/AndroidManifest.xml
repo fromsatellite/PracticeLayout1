@@ -31,49 +31,51 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.recycleview.HomeActicity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RulerActivity"/>
-        <activity android:name="com.example.recycleview.HomeActicity"/>
-        <activity android:name="com.satellite.activity.ReflectResActivity"/>
+        <activity android:name=".RulerActivity" />
+        <!-- <activity android:name="com.example.recycleview.HomeActicity"/> -->
+        <activity android:name="com.satellite.activity.ReflectResActivity" />
 
-        <!--<activity-->
-            <!--android:name="com.example.test_webview_demo.MainActivity"-->
-            <!--android:configChanges="orientation|screenSize|keyboardHidden" >-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
+        <!-- <activity -->
+        <!-- android:name="com.example.test_webview_demo.MainActivity" -->
+        <!-- android:configChanges="orientation|screenSize|keyboardHidden" > -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        <!--</activity>-->
+
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
         <activity
             android:name="com.example.test_webview_demo.FullScreenActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:label="@string/app_name" >
-        </activity>
-
+            android:label="@string/app_name"></activity>
         <activity
             android:name="com.example.test_webview_demo.FilechooserActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:label="@string/app_name" >
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name="com.example.test_webview_demo.BrowserActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:label="@string/app_name" >
-        </activity>
+            android:label="@string/app_name"></activity>
 
-        <service android:name="com.example.messager.service.MessengerService"
+        <service
+            android:name="com.example.messager.service.MessengerService"
             android:process=":remote" />
-        <service android:name="com.example.testaidl.service.BookManagerService"
+        <service
+            android:name="com.example.testaidl.service.BookManagerService"
             android:process=":remote2" />
-        <service android:name="com.example.binderpool.service.BinderPoolService"
+        <service
+            android:name="com.example.binderpool.service.BinderPoolService"
             android:process=":remote3" />
+
+        <activity android:name="com.example.remoteviews.RemoteViewActivity"></activity>
     </application>
 
 </manifest>

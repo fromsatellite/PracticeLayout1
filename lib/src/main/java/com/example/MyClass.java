@@ -1,10 +1,11 @@
 package com.example;
 
-import com.example.annotation.runtime.ParseAnnotation;
+import com.example.sort.BubbleSort2;
+import com.example.sort.Telephone;
 
 public class MyClass {
     public static void main(String[] args){
-        System.out.println("MyClass");
+        System.out.println("这是MyClass");
 //        System.out.println("x = "+test());
 //        int[] list = {1, 2, 3, 4, 5};
 //        BubbleSort bubbleSort = new BubbleSort();
@@ -45,14 +46,37 @@ public class MyClass {
 //        TestHelper.getGenericType();
 //        TestFor.testLoop();
 
-        try {
-            ParseAnnotation.parseTypeAnnotation();
-            ParseAnnotation.parseFieldAnnotation();
-            ParseAnnotation.parseConstructAnnotation();
-            ParseAnnotation.parseMethodAnnotation();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            ParseAnnotation.parseTypeAnnotation();
+//            ParseAnnotation.parseFieldAnnotation();
+//            ParseAnnotation.parseConstructAnnotation();
+//            ParseAnnotation.parseMethodAnnotation();
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//        TestFor.testBoolean();
+//        System.out.println("1/2 = "+(1/2)+", 3/4 = "+(3/4)+", (int)(5000-scrollX%icon_width*ratio) = "
+//                +(int)(5000-4%3*5000/2));
+
+//        String s1 = "abc";
+//        String s2 = new String("abc");
+//        System.out.println(s1 == s2);
+//
+//        MyDynamicProxy proxy = new MyDynamicProxy();
+//        proxy.onProxy();
+//        proxy.sayHello();
+//        LinkedHashMapSample.testRemove();
+
+//        TestClassLoad testClassLoad = new TestClassLoad();
+//        testClassLoad.testClassLoad();
+//        TestClassLoad testClassLoad2 = new TestClassLoad();
+
+        int[] data = {4,2,7,1,8};
+        BubbleSort2 bubbleSort2 = new BubbleSort2();
+//        bubbleSort2.sort(data);
+        bubbleSort2.recursiveSort(data);
+        Telephone telephone = new Telephone();
+        telephone.start("234");
     }
 
     public static int test(){

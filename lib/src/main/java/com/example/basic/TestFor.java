@@ -30,4 +30,12 @@ public class TestFor {
             i++;
         }
     }
+
+    public static void testBoolean(){
+        boolean layoutRequested = true;
+        boolean mStopped = true;
+        boolean mReportNextDraw = false;
+        final boolean didLayout = layoutRequested && (!mStopped);
+        System.out.println("didLayout = " + didLayout+", mStopped = "+mStopped);
+    }
 }

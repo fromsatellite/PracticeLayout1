@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
-import com.example.ToastUtil;
+import com.example.recycleview.itemdecoration.MyAdapter;
+import com.example.recycleview.itemdecoration.RollDividerItemDecoration;
 import com.hencoder.hencoderpracticelayout1.R;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -20,43 +21,95 @@ import java.util.List;
 public class HomeActicity extends Activity {
 
     private RecyclerView recyclerView;
+    // 普通一级列表
     private List<String> mDatas;
     private HomeAdapter adapter;
+    // 二级列表
 //    private List<DataTree<TreeAdapter.DemoDetails, TreeAdapter.DemoDetails>> dataTrees;
 //    private TreeAdapter treeAdapter;
+    // 时间轴
+    private ArrayList<HashMap<String,Object>> listItem;
+    private MyAdapter myAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_recyclerview);
 
+        initData();
+        initView();
+    }
+
+    private void initView(){
         recyclerView = (RecyclerView) findViewById(R.id.id_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        initData();
-        adapter = new HomeAdapter(mDatas);
+
+        // 适配器设置
+//        adapter = new HomeAdapter(mDatas);
+//        recyclerView.setAdapter(adapter);
 //        treeAdapter = new TreeAdapter(this);
 //        treeAdapter.setDataTrees(dataTrees);
-        recyclerView.setAdapter(adapter);
 //        recyclerView.setAdapter(treeAdapter);
-        adapter.setOnItemClickLitener(new HomeAdapter.OnItemClickLitener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                ToastUtil.show(HomeActicity.this, "onItemClick pos "+position);
-            }
+        myAdapter = new MyAdapter(this, listItem);
+        recyclerView.setAdapter(myAdapter);
 
-            @Override
-            public void onItemLongClick(View view, int position) {
-                ToastUtil.show(HomeActicity.this, "onItemLongClick pos "+position);
-            }
-        });
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
+//        adapter.setOnItemClickLitener(new HomeAdapter.OnItemClickLitener() {
+//            @Override
+//            public void onItemClick(View view, int position) {
+//                ToastUtil.show(HomeActicity.this, "onItemClick pos "+position);
+//            }
+//
+//            @Override
+//            public void onItemLongClick(View view, int position) {
+//                ToastUtil.show(HomeActicity.this, "onItemLongClick pos "+position);
+//            }
+//        });
+
+//        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
+        recyclerView.addItemDecoration(new RollDividerItemDecoration(this));
     }
 
     protected void initData(){
-        mDatas = new ArrayList<String>();
-        for (int i = 'A'; i <= 'Z'; i++){
-            mDatas.add("" + (char)i);
-        }
+        // 一级列表数据赋值
+//        mDatas = new ArrayList<String>();
+//        for (int i = 'A'; i <= 'Z'; i++){
+//            mDatas.add("" + (char)i);
+//        }
+
+        // 时间轴数据初始化
+        listItem = new ArrayList<HashMap<String, Object>>();/*在数组中存放数据*/
+
+        HashMap<String, Object> map1 = new HashMap<String, Object>();
+        HashMap<String, Object> map2 = new HashMap<String, Object>();
+        HashMap<String, Object> map3 = new HashMap<String, Object>();
+        HashMap<String, Object> map4 = new HashMap<String, Object>();
+        HashMap<String, Object> map5 = new HashMap<String, Object>();
+        HashMap<String, Object> map6 = new HashMap<String, Object>();
+
+        map1.put("ItemTitle", "美国谷歌公司已发出");
+        map1.put("ItemText", "发件人:谷歌 CEO Sundar Pichai");
+        listItem.add(map1);
+
+        map2.put("ItemTitle", "国际顺丰已收入");
+        map2.put("ItemText", "等待中转");
+        listItem.add(map2);
+
+        map3.put("ItemTitle", "国际顺丰转件中");
+        map3.put("ItemText", "下一站中国");
+        listItem.add(map3);
+
+        map4.put("ItemTitle", "中国顺丰已收入");
+        map4.put("ItemText", "下一站广州华南理工大学");
+        listItem.add(map4);
+
+        map5.put("ItemTitle", "中国顺丰派件中");
+        map5.put("ItemText", "等待派件");
+        listItem.add(map5);
+
+        map6.put("ItemTitle", "华南理工大学已签收");
+        map6.put("ItemText", "收件人:Carson");
+        listItem.add(map6);
+
 
 //        dataTrees = new ArrayList<>();
 //        for (int i = 'A'; i <= 'Z'; i++){
